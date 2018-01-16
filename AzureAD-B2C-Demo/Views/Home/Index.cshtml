@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading jumbotron">
+        <div>
+            @if(User.Identity.IsAuthenticated)
+            {
+                <h1>Welcome @User.Identity.Name</h1>
+                <p class="lead">Here are your claims</p>
+                <ul>
+                    @foreach (var claim in User.Claims)
+                    {
+                        <li>
+                            <em>@claim.Type</em>: @claim.Value
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <h1>Welcome!</h1>
+            }
+
+            @if(!User.Identity.IsAuthenticated)
+            {
+                <p>
+                    <a class="btn btn-lg btn-success" asp-controller="Auth" asp-action="SignUp">
+                        Sign Up
+                    </a>
+                </p>
+            }
+        </div>
+
+    </div>
+    <div class="panel-body bg-info">
+        <div class="col-lg-12">
+            <h4>References</h4>
+            <ul>
+                <li>
+                    <div class="alert-info">
+                        <a href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-get-started">
+                            Create an Azure Active Directory B2C tenant in the Azure portal
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="alert-info">
+                        <a href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-app-registration">
+                            Azure Active Directory B2C: Register your application
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="alert-info">
+                        <a href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-setup-goog-app">
+                            Azure Active Directory B2C: Provide sign-up and sign-in to consumers with Google+ accounts
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="alert-info">
+                        <a href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-setup-msa-app">
+                            Azure Active Directory B2C: Provide sign-up and sign-in to consumers with Microsoft accounts
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="alert-info">
+                        <a href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-setup-twitter-app">
+                            Azure Active Directory B2C: Provide sign-up and sign-in to consumers with Twitter accounts
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="alert-info">
+                        <a href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-setup-fb-app">
+                            Azure Active Directory B2C: Provide sign-up and sign-in to consumers with Facebook accounts
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="bg-info">
+
+</div>
