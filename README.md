@@ -1,4 +1,4 @@
-# Azure-AD-B2C-Demo ASP.NET Core 2.0 Web App
+# Azure AD B2C Demo ASP.NET Core 2.0 Web App
 
 This Sample ASP.NET Core 2.0 Web app demonstrate to authenticate users using Azure AD B2C with default tenant domain account or other social identities. 
 
